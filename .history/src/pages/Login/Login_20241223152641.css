@@ -1,0 +1,159 @@
+.login {
+  height: 100vh;
+  background-image: linear-gradient(#0000007e, #0000007e),
+    url("../../../public/background_banner.jpg");
+  padding: 20px 8%;
+}
+
+.login-logo {
+  width: 160px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 60px;
+  margin: auto;
+}
+
+.login-form h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Modified input styles to accommodate the icon */
+.login-form input {
+  width: 100%;
+  height: 50px;
+  background: #1d1c1c;
+  color: white;
+  margin: 12px 0;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 80%;
+}
+
+/* Add styles for the password input container */
+.relative {
+  position: relative;
+}
+
+/* Add styles for the eye icon */
+.relative span {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #8c8c8c;
+  z-index: 10;
+  margin-top: 6px; /* Adjust this value to vertically center the icon */
+}
+
+.relative span:hover {
+  color: #fff;
+}
+
+/* Rest of your existing styles remain the same */
+.login-form input:focus {
+  border: 2px solid #f4f1f1;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-form button {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 16px;
+  background: #e50914;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.login-form .second-btn {
+  background-color: rgb(91, 90, 90) !important;
+  color: white;
+  opacity: 80%;
+}
+
+.login .login-form .second-btn:hover {
+  background-color: rgb(74, 74, 74) !important;
+}
+
+.or-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px 5px;
+}
+
+.form-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b3b3b3;
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remember input {
+  width: 18px;
+  height: 18px;
+}
+
+.form-switch {
+  margin-top: 40px;
+  color: #737373;
+}
+
+.form-switch span {
+  margin-left: 6px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.second-p {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.second-p a {
+  color: rgb(2, 155, 231);
+  text-decoration: none;
+}
+
+.second-p a:hover {
+  text-decoration: underline;
+}
+
+/* new */
+.form-switch{
+  margin-top: 40px;
+  color: #737373;
+}
+
+.form-switch span{
+  margin-left: 6px;
+  color: #;
+}

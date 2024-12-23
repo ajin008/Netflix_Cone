@@ -42,8 +42,8 @@ export const TitleCards = ({ title }) => {
                 src={card.Poster !== "N/A" ? card.Poster : "placeholder.jpg"}
                 alt={card.Title}
               />
-              <p className="card-title">{card.Title}</p>
-              {/* <p>Year: {card.Year}</p> */}
+              {/* <p>{card.Title}</p>
+              <p>Year: {card.Year}</p> */}
             </div>
           );
         })}

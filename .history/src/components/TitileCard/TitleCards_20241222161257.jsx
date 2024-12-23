@@ -1,12 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./TitleCards.css";
+import cards_data from "../../assets/cards/Cards_data";
 
-export const TitleCards = ({ title }) => {
+export const TitleCards = ({ title, categroy }) => {
   const [apiData, setApiData] = useState([]);
+
   const cardsRef = useRef();
 
-  // OMDb API Key
-  const API_KEY = "bc26c5dc";
+  // for fetching movie data
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "Bearer 408f52848da11fee128e827d3c821643",
+    },
+  };
 
   const handleWheel = (event) => {
     event.preventDefault();
@@ -14,14 +23,12 @@ export const TitleCards = ({ title }) => {
   };
 
   useEffect(() => {
-    // Fetch movie data from OMDb API
-    fetch(`http://www.omdbapi.com/?s=batman&apikey=${API_KEY}`)
+    fetch(
+      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+      options
+    )
       .then((res) => res.json())
-      .then((res) => {
-        if (res.Search) {
-          setApiData(res.Search); // OMDb returns data in the 'Search' field
-        }
-      })
+      .then((res) => setApiData(res.results))
       .catch((err) => console.error(err));
 
     const currentRef = cardsRef.current;
@@ -33,17 +40,16 @@ export const TitleCards = ({ title }) => {
 
   return (
     <div className="Title-card">
-      <h2>{title ? title : "Popular Movies"}</h2>
-      <div className="card-list" ref={cardsRef}>
+      <h2>{title ? title : "Popular on Netflix"}</h2>
+      <div className="card-list " ref={cardsRef}>
         {apiData.map((card, index) => {
           return (
             <div className="card" key={index}>
               <img
-                src={card.Poster !== "N/A" ? card.Poster : "placeholder.jpg"}
-                alt={card.Title}
+                src={`http://image.tmdb.org/t/p/w500` + card.backdrop_path}
+                alt=""
               />
-              <p className="card-title">{card.Title}</p>
-              {/* <p>Year: {card.Year}</p> */}
+              <p>{card.original_title}</p>
             </div>
           );
         })}

@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 7000,
-    
+    open: "brave", // Corrected this line to "open" instead of "pen"
   },
 });
-// open: "brave", 
